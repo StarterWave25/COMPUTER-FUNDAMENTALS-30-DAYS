@@ -6,7 +6,7 @@
 If RAM is full, where will new data go?
 
 **Answer:**
-Extra data will go into secondary storage (SSD or HDD).
+Extra data will go into secondary storage (SSD or HDD) (_The data that isn't used for long time_).
 
 ---
 
@@ -47,14 +47,17 @@ Because the process load has increased with increase in the range of the `for` l
 ## Part 5: Learn the Concepts
 
 ### Understanding RAM
+
 **What happens when an application starts?**
 The application is brought from the SSD into RAM and put inside a process by the OS.
 
 ### Understanding Stack
+
 **Why can the computer find age quickly?**
 `age` is stored in the stack, so access is quick.
 
 ### Understanding Heap
+
 **Why can't large objects be handled exactly like simple values?**
 Because they can be large, dynamic, and of unknown size.
 

@@ -2,7 +2,7 @@
 
 ## System Information
 
-![System Information](purushotham-screenshots/one.png)
+![System Information](../1.Screenshots/Purushotham/one.png)
 
 1. **What are your CPU, RAM, and Storage specifications?**
     - **A:** Intel core i5 12500H, 16GB ddr4 ram, 512GB NVME gen4 ssd.
@@ -17,7 +17,7 @@
 
 ## Chrome, VS Code, Whatsapp Analysis
 
-![App Analysis](purushotham-screenshots/two.png)
+![App Analysis](../1.Screenshots/Purushotham/two.png)
 
 - **Which application used the most RAM?**
     - **A:** Whatsapp (at 625.4MB).
@@ -65,7 +65,7 @@
 
 ## Before Experiment
 
-![Before Experiment](purushotham-screenshots/three.png)
+![Before Experiment](../1.Screenshots/Purushotham/three.png)
 
 - **Initial RAM usage of Chrome?**
     - **A:** 450.5 MB.
@@ -74,7 +74,7 @@
 
 ## After Opening 20 Tabs
 
-![After 20 Tabs](purushotham-screenshots/four.png)
+![After 20 Tabs](../1.Screenshots/Purushotham/four.png)
 
 - **How much did RAM increase?**
     - **A:** It has increased up to 2.9GB.
@@ -87,7 +87,7 @@
 
 ## Infinite Loop Experiment
 
-![Infinite Loop](purushotham-screenshots/five.png)
+![Infinite Loop](../1.Screenshots/Purushotham/five.png)
 
 **Run in Chrome Console:**
 
@@ -114,7 +114,7 @@ while (true) {
 
 ## After Closing Tabs
 
-![After Closing Tabs](purushotham-screenshots/six.png)
+![After Closing Tabs](../1.Screenshots/Purushotham/six.png)
 
 - **Did RAM usage immediately decrease?**
     - **A:** Yes, immediately decreased from the peak of 9GB to 364.9MB.

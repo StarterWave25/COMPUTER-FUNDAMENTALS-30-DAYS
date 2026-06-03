@@ -105,5 +105,64 @@ console.log(myUsers);
 ## **STACK & HEAP: Why do they exists?**
 
 ### To organinse the data in RAM we have 2 problems.
-1. Temporary data like function's variables lives upto program execution completes.
-2. Some data like Arrays, Objects, Images, etc doesn't have.
+1. Temporary data like function variables are manually tracked & freed but we knew when those variables die.
+2. Some data like Arrays, Objects, Images, etc doesn't have any fixed size they grow dynamically.
+
+
+## **Solving temporary variables problem - STACK**
+
+### We knew that all variables of a function are unused & destroyed after the function call.
+
+### So, why don't we automate the process of freeing the memory used by a function after the return statement.
+
+### Observe the stack of plates, the plate on the top of the stack can be easily removed.
+
+### So if we maintain all the function calls like a plates of stack, we can easily free the memory that a Fn has been used after execution which is on the top of the stack.
+
+
+## **Solving dynamic size problem - HEAP**
+
+### For an array to reserve the memory in the RAM, we don't know exactly how much we need & when it is unused.
+
+### So, we shouldn't use a fixed structure like STACK to assign dynamic memory.
+
+### We need a structure which enables to grow dynamically, allocate whenever needed and free later.
+
+### That is called the HEAP.
+
+### For every thread in a process has its own stack memory but the heap is shared between all the threads.
+
+![threads-heap](screenshots/six.webp)
+
+### But it creates some problems like:
+1. Finding the free space in the memory takes time.
+2. The free space may be scattered and it is hard to use.
+3. And engineers may forgot to free the memory even a process completes its execution.
+
+
+### If we all put together then we can see like this
+![threads-heap](screenshots/seven.webp)
+
+
+# **Part 6 - Laggy!**
+
+## **Why does a computer become slow when many applications are open?**
+
+### **1. RAM Pressure:**
+- When multiple apps are opened then they have to be fetched from the SSD and store them in the RAM.
+- But the RAM has less size. So, storing more instructions takes lot of space.
+- When CPU is switching between apps the OS should swap the old & new instructions from RAM & SSD.
+- So, the above process creates delay.
+
+### **2. CPU Context Switching:**
+- When CPU is switching between multiple apps, the CPU has to switch Process Control Block of one app or process to other.
+- The above process is also called as Context Switching.
+- It is an overhead for the CPU and makes it to spend more time on switching rather than processing.
+
+### **3. Disk Activity:**
+- When many apps are opened they may write, read or update the data in the disk.
+- It creates a competition between processes to access the disk.
+
+### **4. Background Tasks:**
+- Some apps like music players, video streaming platforms, etc and some ma waiting for notifications they all run in background.
+- And they still use CPU & RAM.

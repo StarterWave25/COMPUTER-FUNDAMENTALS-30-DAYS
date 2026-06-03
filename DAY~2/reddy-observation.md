@@ -12,7 +12,7 @@ This document follows a practical, observation-first approach.
 
 Task Manager Screenshot:
 
-![Task Manager Screenshot](Screenshot 2026-05-31 151729.png)
+![Task Manager Screenshot](../1.Screenshots/Reddy/Screenshot%202026-05-31%20151729.png)
 
 Observed:
 
@@ -546,11 +546,11 @@ Output Appears On Screen
 
 Program = Recipe Book
 
-Process = Chef Cooking
+Process = dish to prepare
 
 Thread = Workers Helping Chef
 
-CPU = Workers Doing Actual Work
+CPU = chef
 
 RAM = Kitchen Table
 

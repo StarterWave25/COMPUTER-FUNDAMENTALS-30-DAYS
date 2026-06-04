@@ -1,16 +1,16 @@
 # PART-1 Experiment:-
 
 1. **Initial state (_task manager and windows explorer are open_)**
-   ![one](/DAY~2/purushotham-screenshots/one.png)
+   ![one](../1.Screenshots/Purushotham/2-one.png)
 2. **Chrome is opened.**
-   ![two](/DAY~2/purushotham-screenshots/two.png)
+   ![two](../1.Screenshots/Purushotham/2-two.png)
 
 **Q:- Why there are multiple chrome entries?**
 
 **A:-** Because those are multiple processes initiated by chrome.
 
 3. **5 tabs are opened.**
-   ![three](/DAY~2/purushotham-screenshots/three.png)
+   ![three](../1.Screenshots/Purushotham/2-three.png)
 
 **Q1:- Did the memory increase?**
 
@@ -24,7 +24,7 @@
 
 **A:- Because opening tabs increased no.of processes and in turn increased memory usage.**
 
-4.![four](/DAY~2/purushotham-screenshots/four.png)
+4.![four](../1.Screenshots/Purushotham/2-four.png)
 
 **Q1:- What changed?**
 

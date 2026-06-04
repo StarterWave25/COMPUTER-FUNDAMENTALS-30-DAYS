@@ -5,7 +5,7 @@
 * **What I Saw:** I researched their importance to see what could be safely turned off.
 * **What I Learned:** I learned that apps like RTKAudService64 (Realtek Audio driver) and SecurityHealthSystray (Windows Security) are critical and must stay enabled so the laptop's sound and security features work properly.
 
-![Analyzing Startup Apps](Prudvi-Images/startup-apps.png)
+![Analyzing Startup Apps](../1.Screenshots/Prudvi/startup-apps.png)
 
 ## Task 2: Network and Disk Fluctuations via Media Upload
 * **What I Did:** I opened WhatsApp and uploaded a heavy 60 MB video file to a chat while watching the Task Manager.

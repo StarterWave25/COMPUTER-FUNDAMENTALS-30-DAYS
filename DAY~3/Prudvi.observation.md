@@ -1,4 +1,4 @@
-# Day ~ 2 [Memory Fundamentals Mission]
+# Day ~ 3 [Memory Fundamentals Mission]
 # Observations - Patnam Prudvinath
 
 ## Part -1 [If RAM is full, where new data will go?]

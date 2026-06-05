@@ -78,3 +78,5 @@ StarterWave <br>
 ![structure](screenshots/ten.png)
 
 ### Finally, I deleted the this.txt from the projects directory.
+
+### ``del filename.txt``  

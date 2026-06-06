@@ -3,9 +3,10 @@
 
 int main()
 {
-    long long x = 0;
-    while (1)
+    long long int ar[100000] = {0};
+    for (int i = 0; i < 100000; i += 100)
     {
-        printf("%d\n", x++);
+        ar[i] = 3;
+        printf("%d ", ar[i]);
     }
 }

@@ -83,7 +83,7 @@ int c = a + b;
 
 ### These all instructions are stored in RAM.
 
-### Next CPU fetches each instruction from the RAM.
+### Next CPU fetches each instruction from the RAM. And it fetches the data of those instructions from the Registers.
 
 ### The CPU decodes the instructions using transistors like if the first 4 bits are 0001 then they will consider it as a MOV operation. It is done through connecting the physical wirings to different parts of CPU.
 
@@ -91,3 +91,62 @@ int c = a + b;
 
 ### Now, the ALU takes the R1 & R2 registers and performs addition operation using half & full adders. And it stores the result into R3. 
 ---
+
+## What are the Parts inside the CPU?
+
+### 1. Registers
+- Modern CPUs are very fast like performing 3 Billion operations per second but the RAM gives the data for only ~1 Billion operations in 1 second.
+- There is a much speed gap between CPU & RAM. And CPU waits most of its time.
+- Engineers introduced tiny storage units called **Registers** inside the CPU.
+- They store ~1KB of data because very small in size & expensive for to build large ones.
+- They are used to store operands for the Arithmetic or Logical operations. So, ALU directly interacts with them.
+
+Feel the Registers:
+
+```
+int c = 5 + 3;
+
+call	___main
+movl	$5, 28(%esp)
+movl	$3, 24(%esp)
+movl	28(%esp), %edx
+movl	24(%esp), %eax
+addl	%edx, %eax
+```
+
+### 2. Cache
+- For to store large size of frequent data. The registers aren't enough because of their size.
+- So, CPU needs another layer called Cache. This layer has 3 levels: L1, L2, L3 Cache.
+- It stores the frequent instructions or data to give it to the CPU.
+
+Feel Cache:
+```
+Turn On the System, Open VS Code. You observe some what slow.
+Next again reopen the VS Code, it will open faster than before.
+- As the data of VS Code is already stored in Cache. So the CPU fetches the instructions or data from the Cache which faster than RAM and execute them.
+```
+
+## Biggest Lesson: Almost all the applications are slow because of RAM & Storage not CPU. CPU is faster than all of them. So, we have to optimize our apps for Caching, Memory & Storage. 
+
+### 3. ALU
+- It performs Arithmetic & Logical opeartions on the operands present in the CPU Registers of an instruction.
+- Without it we cannot any Arithmetic & Logical opeartions.
+- This ALU is built using combinational circuits like Half Adder, Full Adder & comparators, etc.
+
+### 4. Control Unit
+- It triggers the units in the CPU for to execute an instruction using control signals.
+- For Example: add eax, ebx
+- Control Unit generates signal to:
+Read EAX,
+Read EBX,
+Enable ADD path,
+Write result.
+
+---
+
+## Why does CPU Cores exists?
+- If a CPU has no cores then it has to execute only one thread at a time.
+- For many years, the engineers had increased the performance by increasing the clock speed.
+1GHz -> 2GHz -> 3GHz -> 4Hz
+- But as we know even the CPU is faster, fetching the instructions from RAM & Cache is slow. So, the CPU has to wait.
+- So, instead of 1 very fast CPU. Divide the CPU into parts called cores.

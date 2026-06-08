@@ -150,3 +150,5 @@ Write result.
 1GHz -> 2GHz -> 3GHz -> 4Hz
 - But as we know even the CPU is faster, fetching the instructions from RAM & Cache is slow. So, the CPU has to wait.
 - So, instead of 1 very fast CPU. Divide the CPU into parts called cores.
+- A Core is a mini CPU. It has its own Registers, ALU, Cache, Decoder, etc.
+- 

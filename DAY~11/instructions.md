@@ -1,4 +1,4 @@
-# Today's Concept is: Process
+# Today's Concept is: Threads
 
 ## Do not learn it like an exam topic.
 ## Learn it like an engineer building a mental model.
@@ -18,4 +18,3 @@
 Do not skip reasoning.
 Do not focus on memorization.
 Focus on first-principles understanding and engineering maturity.
-

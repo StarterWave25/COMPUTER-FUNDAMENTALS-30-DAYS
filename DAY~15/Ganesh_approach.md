@@ -6,10 +6,10 @@
 
 3. Goal is to find the Low Operation Cost.. which is optimal solution
 
-4. To divide the sub arrays.., we need to keep the length of the sub array to be 2 and minimise the sub arrays and note the cost.
+4. To divide the sub arrays.., we need to keep the length of the sub array to be 2 for last to Elments of the array.. as we arrange the elements in the ascending array.. and the first elements making the largeat subarray.
 
 5. At last take the whole note of Costs and add them .. to find the low optimal cost.
 
-6. So Length of array x Maximum Value in the array will be the operation which is the lowest one.
+6. So we will get the operation which is the lowest one.
 
 ```

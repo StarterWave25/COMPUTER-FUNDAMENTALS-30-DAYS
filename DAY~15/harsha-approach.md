@@ -53,6 +53,43 @@ Total = 42
 ---
 Full:
 [7,7,7,7,7] -> 5 * 7 = 35
+---
+
+4. [5,10,8,9,12,30]
+
+Half:
+[5,10,8] -> 3 * 10 = 30
+[10,9,12] -> 3 * 12 = 36
+[12,30] -> 2 * 30 = 60
+Total = 126
+
+Full:
+[5,10,8,9,12,30] -> 6 * 30 = 180
+
+Two:
+[5,10,8,9,12,30] 
+[5,10] -> 2 * 10 = 20
+[10,8] -> 2 * 10 = 20
+[10,9] -> 2 * 10 = 20
+[10,12] -> 2 * 12 = 24
+[10,30] -> 2 * 30 = 60
+
+Total = 144
+
+Length - 1 as 1 sub array & 
 
 
 # We need to reduce the no of operations to minimize the total cost. So, the best approach is to choose the entire array as sub array and finding the maximum element in it.
+
+5, 12, 3, 1
+
+5,12 -> 24
+12, 3 -> 24
+12, 1 -> 24
+total = 72
+
+5,12 -> 24
+3,1 -> 6
+12,3 -> 24
+
+total = 54

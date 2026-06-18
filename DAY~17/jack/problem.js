@@ -1,30 +1,44 @@
-const arr = [4, 2, 7, 1, 5];
-const inf = [];
+const arr = [4, 2, 7, 1];
+const scores = [];
 for (let i = 0; i < arr.length; i++) {
-    let le = 0;
-    let re = 0;
+    const currentElement = arr[i];
+    let smallerOnLeft = 0; // Count elements smaller than arr[i] on left
+    let largerOnRight = 0; // Count elements larger than arr[i] on right
   for (let j = 0; j < arr.length; j++) {
-    console.log("------------");
-    
-    if (j < i) {
-      console.log(arr[i]);
-      console.log(arr[j]);
+     const compareElement = arr[j];
+    if(j===i) continue; // Skip current element itself
 
-      if (arr[j] < arr[i]) {
-        le++;
-      }
+        // Count smaller elements on the left
+    if(j<i && compareElement < currentElement) {
+      smallerOnLeft++;
     }
-    if (j > i) {
-      console.log(arr[i]);
-      console.log(arr[j]);
-      if (arr[j] > arr[i]) {
-        re++;
-      }
+
+      // Count larger elements on the right
+    if(j>i && compareElement > currentElement) {
+      largerOnRight++;
     }
-    console.log(le);
-    console.log(re);
-    console.log("------------");
+   
   }
-  inf.push(le - re);
-}
-console.log(inf);
+  // calulate infScore
+  const infScore = smallerOnLeft - largerOnRight;
+   // Calculate final scores
+ scores[i] = {
+    infScore:infScore,
+    powScore:infScore * currentElement
+ }
+};
+console.log(scores );
+//option 1:
+// const maxPowScore = scores.reduce((max,scoreObj)=>{
+//     return scoreObj.powScore > max ?scoreObj.powScore : max;
+// },scores[0].powScore);
+
+//option 2:
+const maxPowScore = Math.max(...scores.map(obj => obj.powScore));
+console.log(...scores.map(obj => obj.powScore));
+
+console.log(maxPowScore); //display maxpowScore
+
+//finds highest powScore element
+let highestPowScoreElement = scores.find(scoreObj => scoreObj.powScore === maxPowScore);
+console.log(highestPowScoreElement);

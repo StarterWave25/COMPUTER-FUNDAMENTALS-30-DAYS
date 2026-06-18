@@ -11,4 +11,4 @@
 1. Everyone explain their approaches & debate about their approaches. (30 min)
 2. Find or Think about the best optimized approach together.(30 min)
 3. Everyone will write the code.(40 min)
-4. Doubts Session (20 min)
+4. Doubts Session (20 min).

@@ -1,4 +1,4 @@
-**Concept:** System Calls
+**Concept:** File System
 
 1. What is the fundamental problem the concept solves, research from history again only from history?
 2. How does the data flows between the components in this concept? (Simple words: components & flow)

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniOS Monitor | Real-Time System Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Modern clean typography: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome for high-quality icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <i class="fa-solid fa-server pulse-icon"></i>
+        <h1>MiniOS <span>Monitor</span></h1>
+      </div>
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">SYSTEM ONLINE</span>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="dashboard-grid">
+      
+      <!-- CPU Monitor Section -->
+      <section class="card cpu-card" id="cpu-monitor-section">
+        <div class="card-header">
+          <div class="card-title">
+            <i class="fa-solid fa-microchip header-icon"></i>
+            <h2>CPU Monitor</h2>
+          </div>
+          <span class="refresh-badge">Every 2s</span>
+        </div>
+        
+        <div class="card-body">
+          <div class="stats-row">
+            <div class="metric-visual">
+              <div class="radial-progress-container">
+                <svg class="radial-svg" viewBox="0 0 100 100">
+                  <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                  <circle class="circle-progress" id="cpu-radial-bar" cx="50" cy="50" r="40" style="stroke-dashoffset: 251.2;"></circle>
+                </svg>
+                <div class="radial-text">
+                  <span class="radial-number" id="cpu-usage-val">0%</span>
+                  <span class="radial-label">LOAD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="metric-specs">
+              <div class="spec-item">
+                <span class="spec-label"><i class="fa-solid fa-gears"></i> Model</span>
+                <span class="spec-value" id="cpu-model">Detecting...</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label"><i class="fa-solid fa-cubes"></i> Cores</span>
+                <span class="spec-value" id="cpu-cores">--</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label"><i class="fa-solid fa-gauge-high"></i> Speed</span>
+                <span class="spec-value" id="cpu-speed">-- GHz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Memory Monitor Section -->
+      <section class="card memory-card" id="memory-monitor-section">
+        <div class="card-header">
+          <div class="card-title">
+            <i class="fa-solid fa-memory header-icon"></i>
+            <h2>Memory Monitor</h2>
+          </div>
+          <span class="refresh-badge">Every 2s</span>
+        </div>
+        
+        <div class="card-body">
+          <div class="stats-row">
+            <div class="metric-visual">
+              <div class="radial-progress-container">
+                <svg class="radial-svg" viewBox="0 0 100 100">
+                  <circle class="circle-bg" cx="50" cy="50" r="40"></circle>
+                  <circle class="circle-progress mem-color" id="mem-radial-bar" cx="50" cy="50" r="40" style="stroke-dashoffset: 251.2;"></circle>
+                </svg>
+                <div class="radial-text">
+                  <span class="radial-number" id="mem-usage-val">0%</span>
+                  <span class="radial-label">USED</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="metric-specs">
+              <div class="spec-item">
+                <span class="spec-label"><i class="fa-solid fa-hard-drive"></i> Total RAM</span>
+                <span class="spec-value" id="mem-total">-- GB</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label"><i class="fa-solid fa-pie-chart"></i> Used RAM</span>
+                <span class="spec-value" id="mem-used">-- GB</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label"><i class="fa-solid fa-folder-open"></i> Free RAM</span>
+                <span class="spec-value" id="mem-free">-- GB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Monitor Section -->
+      <section class="card process-card" id="process-monitor-section">
+        <div class="card-header border-bottom">
+          <div class="card-title">
+            <i class="fa-solid fa-rectangle-list header-icon"></i>
+            <h2>Process Monitor</h2>
+          </div>
+          
+          <div class="process-controls">
+            <!-- Search Input -->
+            <div class="search-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="process-search" placeholder="Search by name..." autocomplete="off">
+              <button id="clear-search-btn" class="clear-btn" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <!-- Processes count -->
+            <span class="process-counter"><span id="process-count">0</span> running</span>
+          </div>
+        </div>
+
+        <div class="process-table-container">
+          <table class="process-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="pid">PID <i class="fa-solid fa-sort"></i></th>
+                <th class="sortable" data-sort="name">Process Name <i class="fa-solid fa-sort"></i></th>
+                <th class="sortable active-sort desc" data-sort="cpu">CPU Usage % <i class="fa-solid fa-sort-down"></i></th>
+                <th class="sortable" data-sort="mem">Memory Usage % <i class="fa-solid fa-sort"></i></th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="process-list-body">
+              <tr>
+                <td colspan="5" class="loading-state">
+                  <i class="fa-solid fa-spinner fa-spin"></i> Loading system processes...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Toast Notification System -->
+    <div class="toast-container" id="toast-container"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

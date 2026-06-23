@@ -1,0 +1,16 @@
+{
+    "name": "mini-os-monitor",
+    "version": "1.0.0",
+    "description": "A simple OS monitoring dashboard featuring CPU, Memory, and Process monitors.",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "systeminformation": "^5.22.9",
+        "ps-node": "^0.1.6"
+    },
+    "author": "A.Purushotham",
+    "license": "ISC"
+}

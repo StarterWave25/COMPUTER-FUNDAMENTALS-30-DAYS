@@ -1,29 +1,26 @@
 //  packages importing
 const express = require('express');
 const cors = require('cors');
-const si = require('systeminformation');
+
+//import routes
+const cpuRoutes = require('./routes/cpu');
+const memoryRoutes = require('./routes/memory');
+const processRoutes = require('./routes/process');
+
 
 // Created an Express app
 const app = express();
 
 // Middleware sett
 app.use(cors());
+//tell express to read json
+app.use(express.json());
 
-// Testing routes
-app.get('/', async (req, res) => {
-    try {
-        const cpu = await si.cpu();
+//Routes
+app.use('/cpu',cpuRoutes);
+app.use('/memory',memoryRoutes);
+app.use('/processes',processRoutes);
 
-        res.json({
-            message: 'Mini OS Monitor Server is running!',
-            cpu: cpu.manufacturer + ' ' + cpu.brand
-        });
-    } catch (error) {
-        res.status(500).json({
-            error: error.message
-        });
-    }
-});
 
 // Server Port
 const PORT = 3000;

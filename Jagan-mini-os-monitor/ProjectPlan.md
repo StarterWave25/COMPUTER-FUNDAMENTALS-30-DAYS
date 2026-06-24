@@ -5,7 +5,7 @@ Build a professional OS monitoring dashboard in phases. Complete one module at a
 
 ---
 
-## Phase 1: Project Setup & Foundation (Day 1)
+## Phase 1: Project Setup & Foundation (Day 1)✅
 
 ### Step 1.1: Initialize Project Structure
 - Create project folder: `mini-os-monitor`
@@ -28,9 +28,9 @@ Build a professional OS monitoring dashboard in phases. Complete one module at a
 
 ---
 
-## Phase 2: Backend APIs (Day 2-3)
+## Phase 2: Backend APIs (Day 2-3)✅
 
-### Module 1: CPU Monitor
+### Module 1: CPU Monitor✅
 **Step 2.1:** Create `services/cpuService.js`
 - Use `systeminformation` package
 - Write function to fetch: CPU model, cores, speed, current usage %
@@ -44,7 +44,7 @@ Build a professional OS monitoring dashboard in phases. Complete one module at a
 
 ---
 
-### Module 2: Memory Monitor
+### Module 2: Memory Monitor✅
 **Step 2.3:** Create `services/memoryService.js`
 - Write function to fetch: total RAM, used RAM, free RAM, usage %
 - Return as JavaScript object
@@ -57,7 +57,7 @@ Build a professional OS monitoring dashboard in phases. Complete one module at a
 
 ---
 
-### Module 3: Process Monitor
+### Module 3: Process Monitor✅
 **Step 2.5:** Create `services/processService.js`
 - Write function to fetch all running processes
 - For each process: extract PID, name, CPU %, memory %

@@ -1,0 +1,28 @@
+<h1>Process Table</h1>
+<input 
+type="text"
+[(ngModel)]="searchQuery"
+(input)="onSearch()"
+ placeholder="Seach Process">
+<table>
+    <thead>
+       <tr>
+         <th>PID</th>
+        <th>NAME</th>
+        <th>CPU</th>
+        <th>MEMORY</th>
+        <th>ACTION</th>
+       </tr>
+    </thead>
+    <tbody>
+        @for(process of data;track process.pid){
+            <tr>
+                <td>{{process.pid}}</td>
+                <td>{{process.name}}</td>
+                <td>{{process.cpu}}</td>
+                <td>{{process.memory}}</td>
+                <td><button (click)="onKill(process.pid)">KILL</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

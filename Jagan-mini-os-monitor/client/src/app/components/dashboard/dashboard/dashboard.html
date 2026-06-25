@@ -1,0 +1,18 @@
+<div>
+  @if (cpu()) {
+    <app-cpu-monitor [data]="cpu()!"> </app-cpu-monitor>
+  }
+
+  @if (memory()) {
+    <app-memory-monitor [data]="memory()!"> </app-memory-monitor>
+  }
+
+  @if (processes()) {
+    <app-process-monitor
+      [data]="processes()!"
+      (killProcess)="killProcess($event)"
+      (search)="searchProcess($event)"
+    >
+    </app-process-monitor>
+  }
+</div>

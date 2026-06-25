@@ -40,14 +40,22 @@ router.post('/kill/:pid',(req,res)=>{
         });
 
     }catch(error){
-        if(error.code === 'ESRCH'){
-            return res.status(403).json({
-                success:false,
-                message:'permission denied'
-            });
-        }
+          console.log(error);
+    console.log(error.code);
+    console.log(error.message);
+if (error.code === 'ESRCH') {
+    return res.status(404).json({
+        success: false,
+        message: 'Process not found'
+    });
+}
 
-        res.status(500).json({
+if (error.code === 'EPERM') {
+    return res.status(403).json({
+        success: false,
+        message: 'Permission denied'
+    });
+}        res.status(500).json({
             success:false,
             message:error.message
         });
